@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Naseem's personal website - Student, Programmer, and Future Web/Game Developer." />
+  <meta name="keywords" content="Naseem, Web Developer, Student, Palestine, Portfolio" />
+  <meta name="author" content="Naseem" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Naseem | Portfolio</title>
+  <style>
+    /* Game Section */
+    .game-section {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .game-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .tic-tac-toe {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      background-color: #f0f0f0;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    .cell:hover {
+      background-color: #ddd;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #00796b;
+    }
+    .resetBtn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .resetBtn:hover {
+      background: #004d40;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header>
+    <img src="assets/svg/N.K.png" alt="NaseemDEMO logo" />
+    <nav class="navigation">
+      <ul>
+        <li><a href="#aboutMe">About Me</a></li>
+        <li><a href="#myWorks">My Works</a></li>
+        <li><a href="#contactMe">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img class="arrow" src="assets/svg/arrow.svg" alt="arrow" />
+      <div class="herosub">
+        <h1 class="name">I'm <span>Naseem</span></h1>
+        <h2 class="title">School Student & Future Developer</h2>
+        <!-- زر Hire Me انحذف -->
+      </div>
+      <img src="assets/svg/Hero.svg" alt="hero image" class="heroImg" />
+    </section>
+
+    <!-- About Me Section -->
+    <section class="aboutMe" id="aboutMe">
+      <img src="assets/svg/AboutMe.svg" alt="About Me image" class="aboutMeImg" />
+      <div class="textcontainer">
+        <div class="textTitle">
+          <h1 class="aboutName">About</h1>
+          <h1 class="aboutTitle">Me</h1>
+          <img src="assets/svg/lightbulb.svg" alt="lightbulb" class="light" />
+        </div>
+        <p class="aboutMePar">
+          My name is Naseem. I am 15 years old and I come from Palestine. I am a high school student at Beit Liqya Boys Secondary School.
+          I have a strong passion for programming, especially in developing games and websites.
+          One of my main goals is to create a major website that can help people in their daily lives.
+        </p>
+      </div>
+    </section>
+
+    <!-- My Works Section -->
+    <section class="myWorks" id="myWorks">
+      <div class="worksTitle">
+        <h1 class="aboutName">My</h1>
+        <h1 class="aboutTitle">Works</h1>
+      </div>
+      <div class="worksGrid">
+        <div class="workCard">
+          <img src="assets/svg/work1.svg" alt="Project 1" />
+          <h3>Website Project</h3>
+          <p>A small website I built to practice HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="workCard">
+          <img src="assets/svg/work2.svg" alt="Project 2" />
+          <h3>Game Project</h3>
+          <p>A simple game coded in JavaScript showcasing my creativity.</p>
+        </div>
+        <div class="workCard">
+          <img src="assets/svg/work3.svg" alt="Project 3" />
+          <h3>Future Project</h3>
+          <p>Currently working on a big idea to help people in daily life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contactContainer" id="contactMe">
+      <div class="contactTitle">
+        <h1 class="aboutName">Contact</h1>
+        <h1 class="aboutTitle">Me</h1>
+      </div>
+      <div class="contact">
+        <div class="emailAndPhone">
+          <img src="assets/svg/Email.svg" alt="Email" />
+          <a href="mailto:naseem2010naseem2010@gmail.com">
+            <h3>naseem2010naseem2010@gmail.com</h3>
+          </a>
+        </div>
+        <!-- رقم الهاتف انحذف -->
+      </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="game-section">
+      <h2>Play XO Game</h2>
+      <div class="tic-tac-toe" id="ticTacToe">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <p id="result"></p>
+      <button class="resetBtn" id="resetBtn">Reset Game</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Naseem | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const cells = document.querySelectorAll(".cell");
+    const result = document.getElementById("result");
+    const resetBtn = document.getElementById("resetBtn");
+
+    let turn = "X";
+    let board = Array(9).fill("");
+
+    function checkWinner() {
+      const winPatterns = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+      for (let pattern of winPatterns) {
+        const [a,b,c] = pattern;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          return board[a];
+        }
+      }
+      return board.includes("") ? null : "Draw";
+    }
+
+    cells.forEach((cell, idx) => {
+      cell.addEventListener("click", () => {
+        if (!cell.textContent && !result.textContent) {
+          cell.textContent = turn;
+          board[idx] = turn;
+          let winner = checkWinner();
+          if (winner) {
+            result.textContent = winner === "Draw" ? "It's a Draw!" : `${winner} Wins!`;
+          }
+          turn = turn === "X" ? "O" : "X";
+        }
+      });
+    });
+
+    resetBtn.addEventListener("click", () => {
+      cells.forEach(cell => cell.textContent = "");
+      board.fill("");
+      result.textContent = "";
+      turn = "X";
+    });
+  </script>
+</body>
+</html>
